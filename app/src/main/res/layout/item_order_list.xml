@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_border"
+    android:layout_margin="10dp"
+    android:padding="20dp">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/select_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:scaleX="1.20"
+        android:scaleY="1.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/select_order"
+        app:layout_constraintStart_toEndOf="@id/select_order"
+        app:layout_constraintTop_toTopOf="@id/select_order"
+        tools:text="Order Id" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/total_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/select_order"
+        app:layout_constraintEnd_toStartOf="@id/drop_down"
+        app:layout_constraintTop_toTopOf="@id/select_order"
+        tools:text="$ 100" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/drop_down"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@id/total_cost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/total_cost"
+        app:srcCompat="@drawable/ic_arrow_down" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sub_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/order_id"
+        app:layout_constraintTop_toBottomOf="@id/select_order">
+<!--
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/order_items"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/order_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_order_product"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

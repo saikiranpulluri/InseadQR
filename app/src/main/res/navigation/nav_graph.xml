@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.konbini.inseadqr.ui.HomeFragment"
+        android:label="@string/home_fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_check_in"
+            app:destination="@id/checkInFragment" />
+        <action
+            android:id="@+id/action_home_to_check_orders"
+            app:destination="@id/checkingOrdersFragment" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkInFragment"
+        android:name="com.konbini.inseadqr.ui.CheckInFragment"
+        android:label="@string/check_in_fragment"
+        tools:layout="@layout/fragment_check_in" />
+    <fragment
+        android:id="@+id/checkingOrdersFragment"
+        android:name="com.konbini.inseadqr.ui.CheckOrdersFragment"
+        android:label="@string/check_your_orders"
+        tools:layout="@layout/fragment_check_orders" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.konbini.inseadqr.ui.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

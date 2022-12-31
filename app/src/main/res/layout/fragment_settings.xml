@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textSize="28sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/txt_settings">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cloudURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="5dp"
+                android:text="@string/cloud_server_url"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cloudServerUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/please_input_server_url"
+                android:imeOptions="actionDone"
+                app:layout_constraintTop_toBottomOf="@id/cloudURL"
+                tools:text="https://xcl2.ineedfood.today" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_clientId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="5dp"
+                android:text="@string/client_id"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/cloudServerUrl"
+                app:layout_constraintTop_toBottomOf="@id/cloudServerUrl" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cloudConsumerKey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="@string/please_input_client_id"
+                android:imeOptions="actionDone"
+                app:layout_constraintEnd_toEndOf="@id/cloudServerUrl"
+                app:layout_constraintStart_toStartOf="@id/cloudServerUrl"
+                app:layout_constraintTop_toBottomOf="@id/txt_clientId" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_client_secret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:padding="5dp"
+                android:text="@string/client_secret"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@id/txt_clientId"
+                app:layout_constraintTop_toBottomOf="@id/cloudConsumerKey" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cloudConsumerSecret"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="@string/please_input_client_secret"
+                android:imeOptions="actionDone"
+                app:layout_constraintEnd_toEndOf="@id/cloudURL"
+                app:layout_constraintStart_toStartOf="@id/cloudURL"
+                app:layout_constraintTop_toBottomOf="@id/txt_client_secret" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_shape_btn"
+        android:padding="15dp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
